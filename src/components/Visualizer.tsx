@@ -6,14 +6,14 @@ import ComponentTree from "~/components/ComponentTree";
 import { findRootPath } from "~/core/utils";
 
 type VisualizerProps = {
-  route: string,
+  route?: string,
 };
 
 const Visualizer = async ({
   route,
 }: VisualizerProps) => {
   const rootDir = await findRootPath();
-  const routePath = path.join(rootDir, decodeURIComponent(route));
+  const routePath = route && path.join(rootDir, decodeURIComponent(route));
   const tree = routePath ? parseComponentTree(routePath, false) : null;
 
   const container: React.CSSProperties = {

@@ -27,7 +27,7 @@ const ComponentExplorer = ({
 }: ComponentExplorerProps) => {
   return (
     <Visualizer
-      route={searchParams.route ?? ""}
+      route={searchParams.route}
     />
   );
 };
